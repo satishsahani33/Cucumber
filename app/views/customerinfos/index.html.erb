@@ -1,0 +1,27 @@
+<h1>Listing customerinfos</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Phone number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customerinfos.each do |customerinfo| %>
+  <tr>
+    <td><%= customerinfo.first_name %></td>
+    <td><%= customerinfo.last_name %></td>
+    <td><%= customerinfo.phone_number %></td>
+    <td><%= link_to 'Show', customerinfo %></td>
+    <td><%= link_to 'Edit', edit_customerinfo_path(customerinfo) %></td>
+    <td><%= link_to 'Destroy', customerinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customerinfo', new_customerinfo_path %>
